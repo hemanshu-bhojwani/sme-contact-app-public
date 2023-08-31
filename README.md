@@ -38,7 +38,7 @@ A clean, user-friendly, web application designed to help businesses organize and
 - **Passport:** Authentication middleware for Node.js.
 - **EJS:** Embedded JavaScript templates for rendering HTML.
 - **MongoDB:** NoSQL database for storing data.
-- **Mongoose:** MongoDB ODM library for Node.js.
+- **Mongoose:** JavaScript OOP library that helps connect MongoDB to Node.js
 - **HTML:** Hypertext Markup Language for creating web pages.
 - **CSS:** Cascading Style Sheets for styling documents.
 - **Bootstrap:** CSS framework for responsive design.
