@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate')%>
+
+<div>
+    <h1><%= business.name %> </h1>
+    <h6><%= business.location %></h6>
+    <p><%= business.description %></p>
+    <p>Phone: <%= business.contact %> | Email: <%= business.email %></p>
+</div>
+
+<div class="mb-5 mt-4 row">
+    <h5>Employees</h5>
+     <% if (business.employees.length > 0) { %>
+      <% for (let employee of business.employees){%>
+        <div class="col-md-4">
+          <div class="card mt-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= employee.name %></h5>
+                <p class="card-text"> <%= employee.position %> </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"> <%= employee.email %> </li>
+                <li class="list-group-item"><%= employee.contact %></li>
+              </ul>
+              <div class="card-body">
+                <a href="/b/<%=business.username%>/<%=employee.id%>" class="btn btn-success" role="button">View Employee</a>              </div>
+          </div>
+        </div>
+    <% } %>
+<% } else { %>
+    <p>There are no employees</p>
+<% } %>
+</div>

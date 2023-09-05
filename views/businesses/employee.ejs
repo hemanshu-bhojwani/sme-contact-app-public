@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="mb-5 mt-4 row">
+    <h2>Contact Details for <%= employee.name %></h2>
+    <div class="col-md-6">
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title"><%= employee.name %></h5>
+                <p class="card-text"><%= employee.position %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Email:</strong> <%= employee.email %></li>
+                <li class="list-group-item"><strong>Contact:</strong> <%= employee.contact %></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Company Details</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Name:</strong> <%= business.name %></li>
+                <li class="list-group-item"><strong>Location:</strong> <%= business.location %></li>
+                <li class="list-group-item"><strong>Description:</strong> <%= business.description %></li>
+                <li class="list-group-item"><strong>Phone:</strong> <%= business.contact %></li>
+                <li class="list-group-item"><strong>Email:</strong> <%= business.email %></li>
+            </ul>
+            <div class="card-body">
+                <a href="/b/<%= business.username %>" class="btn btn-success" role="button">Back to Company</a>
+            </div>
+        </div>
+    </div>
+</div>

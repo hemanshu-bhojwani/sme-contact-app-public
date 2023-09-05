@@ -1,0 +1,46 @@
+<% layout('layouts/boilerplate')%>
+
+<div>
+    <h1><%= business.name %> </h1>
+    <h6><%= business.location %></h6>
+    <p><%= business.description %></p>
+    <p>Phone: <%= business.contact %> | Email: <%= business.email %></p>
+
+
+    <a href="/business/new" class="btn btn-primary" role="button">Add New Employee</a>
+    <a href="/business/<%=business.id%>/edit" class="btn btn-primary" role="button">Edit Business</a>
+    <a href="/b/<%=business.username%>" class="btn btn-success" role="button">View Public Business Page</a>
+</div>
+<div class="mb-5 mt-4 row">
+    <h5>Employees</h5>
+     <% if (business.employees.length > 0) { %>
+      <% for (let employee of business.employees){%>
+        <div class="col-md-4">
+          <div class="card mt-3">
+              <div class="card-body">
+                <h5 class="card-title"><%= employee.name %></h5>
+                <p class="card-text"> <%= employee.position %> </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"> <%= employee.email %> </li>
+                <li class="list-group-item"><%= employee.contact %></li>
+              </ul>
+              <div class="card-body">
+                <a href="/b/<%=business.username%>/<%=employee.id%>" class="btn btn-success" role="button">View Employee</a>
+                <a href="/business/e/<%=employee._id%>/edit" class="btn btn-warning" role="button">Edit Employee</a>
+                <form class="d-inline" action="/business/e/<%=employee._id%>?_method=DELETE" method="POST">
+                  <button class="btn btn-danger">Delete</button>
+                </form>
+              </div>
+          </div>
+        </div>
+    <% } %>
+    <% } else { %>
+      <p>You have no employees</p>
+      <% } %>
+</div>
+
+
+    
+
+
